@@ -2,6 +2,9 @@
 
 #Include <JSON>
 
+SetWorkingDir %A_ScriptDir%
+SplitPath, A_ScriptDir,, hotkeys_directory
+
 ; SetTitleMatchMode, RegEx
 
 ; Capslock::Esc
@@ -326,19 +329,14 @@ return
 
 ^#v::
 
-  script_path := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys\python\main.py"
-
-  script_directory := "C:\Users\scooper\source\repos\hotkeys\"
-
   if (A_ComputerName = "HTE20190624") {
-    run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
   }
   else if (A_ComputerName = "SCOOPER17") {
-    run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
   }
   else if (A_ComputerName = "DESKTOP-8NEKA2M") {
-  	script_path := "C:\Users\Steven Cooper\OneDrive\Scripts\hotkeys\python\main.py"
-  	run, %comspec% /c py -3 "%script_path%" -script "set_dropbox_clipboard",,
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
   }
 
 return
@@ -346,19 +344,14 @@ return
 
 ^#c::
 
-  script_path := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys\python\main.py"
-
-  script_directory := "C:\Users\scooper\source\repos\hotkeys\"
-
   if (A_ComputerName = "HTE20190624") {
-    run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
   }
   else if (A_ComputerName = "SCOOPER17") {
-    run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
   }
   else if (A_ComputerName = "DESKTOP-8NEKA2M") {
-  	script_path := "C:\Users\Steven Cooper\OneDrive\Scripts\hotkeys\python\main.py"
-  	run, %comspec% /c py -3 "%script_path%" -script "get_dropbox_clipboard",,
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
   }
 
 return
