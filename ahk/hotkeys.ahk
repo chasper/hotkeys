@@ -327,70 +327,46 @@ return
 return
 
 
+; Set Dropbox Clipboard
+; ---------------------
 ^#v::
-
-  if (A_ComputerName = "HTE20190624") {
-    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
-  }
-  else if (A_ComputerName = "SCOOPER17") {
-    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
-  }
-  else if (A_ComputerName = "DESKTOP-8NEKA2M") {
-    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
-  }
-
+  run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
 return
 
-
+; Get Dropbox Clipboard
+; ---------------------
 ^#c::
-
-  if (A_ComputerName = "HTE20190624") {
-    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
-  }
-  else if (A_ComputerName = "SCOOPER17") {
-    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
-  }
-  else if (A_ComputerName = "DESKTOP-8NEKA2M") {
-    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
-  }
-
+  run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
 return
 
-
+; Get Monitor Model
+; -----------------
 ^#m::
-
-  script_path := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys\python\main.py"
-  run, %comspec% /c py -3 "%script_path%" -script "get_monitor_model",,
-
+  run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_monitor_model & exit,,
 return
 
 
 0 & 1::
   if (A_ComputerName = "DESKTOP-8NEKA2M" and WinActive("Hades")) {
-    script_path := "C:\Users\Steven Cooper\OneDrive\Scripts\hotkeys\python\main.py"
-    run, %comspec% /c py -3 "%script_path%" -script "backup_hades_save",,hide
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script backup_hades_save & exit,,hide
   }
 return
 
 0 & 2::
-
   if (A_ComputerName = "DESKTOP-8NEKA2M" and WinActive("Hades")) {
-    script_path := "C:\Users\Steven Cooper\OneDrive\Scripts\hotkeys\python\main.py"
-    run, %comspec% /c py -3 "%script_path%" -script "load_hades_backup" -restart "y",,hide
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script load_hades_backup -restart y & exit,,hide
   }
 return
 
 0 & 3::
   if (A_ComputerName = "DESKTOP-8NEKA2M" and WinActive("Hades")) {
-    script_path := "C:\Users\Steven Cooper\OneDrive\Scripts\hotkeys\python\main.py"
-    run, %comspec% /c py -3 "%script_path%" -script "delete_last_hades_backup",,hide
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script delete_last_hades_backup & exit,,hide
   }
 return
 
 0 & 4::
   if (A_ComputerName = "DESKTOP-8NEKA2M" and WinActive("Hades")) {
-    script_path := "C:\Users\Steven Cooper\OneDrive\Scripts\hotkeys\python\main.py"
-    run, %comspec% /c py -3 "%script_path%" -script "exit_hades",,hide
+    run, %comspec% /c cd /d "%hotkeys_directory%" & .\venv\Scripts\activate & python .\python\main.py -script exit_hades & exit,,hide
   }
 return
 
@@ -398,16 +374,16 @@ return
 return
 
 
-!^+Esc::
-  script_path := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys\python\main.py"
+; !^+Esc::
+;   script_path := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys\python\main.py"
 
-  if (A_ComputerName = "HTE20190624") {
-    run, %comspec% /c py -3 "%script_path%" -script "toggle_input_source",,
-  }
-  else if (A_ComputerName = "SCOOPER17") {
-    run, %comspec% /c py -3 "%script_path%" -script "toggle_input_source",,
-  }
-return
+;   if (A_ComputerName = "HTE20190624") {
+;     run, %comspec% /c py -3 "%script_path%" -script "toggle_input_source",,
+;   }
+;   else if (A_ComputerName = "SCOOPER17") {
+;     run, %comspec% /c py -3 "%script_path%" -script "toggle_input_source",,
+;   }
+; return
 
 
 
@@ -416,10 +392,6 @@ return
   Send +{F10}
   Sleep 500G
   Send {a}
-  ; Send {h}
-  ; Sleep 100
-  ; Send {c}
-  ; Send {p}
 return
 
 
