@@ -328,7 +328,7 @@ return
 
   script_path := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys\python\main.py"
 
-  script_directory := "C:\Users\scooper\source\repos\hotkeys\ahk"
+  script_directory := "C:\Users\scooper\source\repos\hotkeys\"
 
   if (A_ComputerName = "HTE20190624") {
     run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
@@ -348,7 +348,7 @@ return
 
   script_path := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys\python\main.py"
 
-  script_directory := "C:\Users\scooper\source\repos\hotkeys\ahk"
+  script_directory := "C:\Users\scooper\source\repos\hotkeys\"
 
   if (A_ComputerName = "HTE20190624") {
     run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
