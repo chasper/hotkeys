@@ -328,11 +328,13 @@ return
 
   script_path := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys\python\main.py"
 
+  script_directory := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys"
+
   if (A_ComputerName = "HTE20190624") {
-    run, %comspec% /c py -3 "%script_path%" -script "set_dropbox_clipboard",,
+    run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
   }
   else if (A_ComputerName = "SCOOPER17") {
-    run, %comspec% /c py -3 "%script_path%" -script "set_dropbox_clipboard",,
+    run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script set_dropbox_clipboard & exit,,
   }
   else if (A_ComputerName = "DESKTOP-8NEKA2M") {
   	script_path := "C:\Users\Steven Cooper\OneDrive\Scripts\hotkeys\python\main.py"
@@ -346,11 +348,13 @@ return
 
   script_path := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys\python\main.py"
 
+  script_directory := "C:\Users\scooper\OneDrive - Wolverine Pipe Line Company\Scripts\hotkeys"
+
   if (A_ComputerName = "HTE20190624") {
-    run, %comspec% /c py -3 "%script_path%" -script "get_dropbox_clipboard",,
+    run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
   }
   else if (A_ComputerName = "SCOOPER17") {
-    run, %comspec% /c py -3 "%script_path%" -script "get_dropbox_clipboard",,
+    run, %comspec% /c cd /d "%script_directory%" & .\venv\Scripts\activate & python .\python\main.py -script get_dropbox_clipboard & exit,,
   }
   else if (A_ComputerName = "DESKTOP-8NEKA2M") {
   	script_path := "C:\Users\Steven Cooper\OneDrive\Scripts\hotkeys\python\main.py"

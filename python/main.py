@@ -1,9 +1,10 @@
 import pywintypes
-import subprocess
 import pywinauto
+import dropbox
+
+import subprocess
 import argparse
 import inspect
-import dropbox
 import shutil
 import time
 import os
