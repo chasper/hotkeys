@@ -84,17 +84,21 @@ def load_hades_backup(restart="y"):
 
   if not os.path.isdir(backups_directory): return
 
-  walk_results = sorted(os.walk(top=backups_directory), reverse=True)
+  backups = [x for x in os.listdir(backups_directory) if os.path.isdir(os.path.join(backups_directory, x))]
 
-  if not walk_results: return
+  if not backups: return
 
-  backup_directory = walk_results[0][0]
+  backup_directory = os.path.join(backups_directory, sorted(backups)[-1])
+
+  print(backup_directory)
 
   if os.path.isdir(hades_directory):
     shutil.rmtree(hades_directory)
     time.sleep(1)
 
   shutil.copytree(backup_directory, hades_directory)
+
+  time.sleep(1)
 
   if restart == 'y':
     subprocess.call(r"C:\Program Files (x86)\Steam\Steam.exe -applaunch 1145360")
