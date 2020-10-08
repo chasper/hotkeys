@@ -63,7 +63,7 @@ getMonitorInputSource()
 }
 
 
-F12::
+^!+#c::
 
   WinGetActiveStats, title, current_window_width, current_window_height, current_window_left, current_window_top
 
